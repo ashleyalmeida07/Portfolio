@@ -38,17 +38,7 @@ export default function Certifications() {
 
   return (
     <section className="certificate section" id="certification">
-      <div className="background-bg">
-        <div className="overlay overlay-sm">
-          <img src="./img/shapes/half-circle.png" className="shape half-circle1" alt="" />
-          <img src="./img/shapes/half-circle.png" className="shape half-circle2" alt="" />
-          <img src="./img/shapes/square.png" className="shape square" alt="" />
-          <img src="./img/shapes/wave.png" className="shape wave" alt="" />
-          <img src="./img/shapes/circle.png" className="shape circle" alt="" />
-          <img src="./img/shapes/triangle.png" className="shape triangle" alt="" />
-          <img src="./img/shapes/x.png" className="shape xshape" alt="" />
-        </div>
-      </div>
+  
 
       <div className="container">
         <div className="section-header">
@@ -64,20 +54,7 @@ export default function Certifications() {
             <button className="filter-btn" data-filter=".others">Others</button>
           </div>
 
-          <div className="grid">
-            {/* Grid items */}
-            <div className="grid-item others">
-              <div className="gallery-image">
-                <img src="./img/Certification/J.P. Morgan_completion_certificate_page-0001.jpg" alt="" />
-                <div className="img-overlay">
-                  {/* <div className="plus"></div> */}
-                  <div className="img-description">
-                    <h4>Software Engineering Job Simulation</h4>
-                    <h5>Credential ID <b>j3ZrSp93kbFkjgmFjCredential</b></h5>
-                  </div>
-                </div>
-              </div>
-            </div>
+          
 
             <div className="grid-item others">
               <div className="gallery-image">
