@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Contact Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Form</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="number" id="phone" placeholder="Phone Number" required>
+            <button type="button" id="addContact">Add Contact</button>
+        </form>
+        
+        <h3>Saved Contacts</h3>
+        <input type="text" id="search" placeholder="Search contacts...">
+        <ul id="contact-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 350px;
+    }
+    
+    h2, h3 {
+        text-align: center;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    input {
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #218838;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    li {
+        background: #f9f9f9;
+        margin: 5px 0;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .edit, .delete {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+    
+    .delete {
+        background-color: #dc3545;
+    }
+    
+    .edit:hover {
+        background-color: #0056b3;
+    }
+    
+    .delete:hover {
+        background-color: #c82333;
+    }
+    
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const addContactButton = document.getElementById("addContact");
+    const contactList = document.getElementById("contact-list");
+    const searchInput = document.getElementById("search");
+
+    let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+
+    function renderContacts() {
+        contactList.innerHTML = "";
+        contacts.forEach((contact, index) => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <span>${contact.name} - ${contact.email} - ${contact.phone}</span>
+                <div>
+                    <button class="edit" onclick="editContact(${index})">Edit</button>
+                    <button class="delete" onclick="deleteContact(${index})">Delete</button>
+                </div>
+            `;
+            contactList.appendChild(li);
+        });
+        localStorage.setItem("contacts", JSON.stringify(contacts));
+    }
+
+    function addContact() {
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const phone = phoneInput.value.trim();
+
+        if (!name || !email || !phone) {
+            alert("All fields are required!");
+            return;
+        }
+
+        contacts.push({ name, email, phone });
+        renderContacts();
+
+        nameInput.value = "";
+        emailInput.value = "";
+        phoneInput.value = "";
+    }
+
+    window.editContact = function(index) {
+        const contact = contacts[index];
+        nameInput.value = contact.name;
+        emailInput.value = contact.email;
+        phoneInput.value = contact.phone;
+
+        addContactButton.innerText = "Update Contact";
+        addContactButton.onclick = function() {
+            updateContact(index);
+        };
+    };
+
+    function updateContact(index) {
+        contacts[index] = {
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            phone: phoneInput.value.trim(),
+        };
+
+        addContactButton.innerText = "Add Contact";
+        addContactButton.onclick = addContact;
+        renderContacts();
+
+        nameInput.value = "";
+        emailInput.value = "";
+        phoneInput.value = "";
+    }
+
+    window.deleteContact = function(index) {
+        if (confirm("Are you sure you want to delete this contact?")) {
+            contacts.splice(index, 1);
+            renderContacts();
+        }
+    };
+
+    searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        contactList.innerHTML = "";
+        contacts
+            .filter(contact => contact.name.toLowerCase().includes(searchTerm) || contact.email.toLowerCase().includes(searchTerm))
+            .forEach((contact, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <span>${contact.name} - ${contact.email} - ${contact.phone}</span>
+                    <div>
+                        <button class="edit" onclick="editContact(${index})">Edit</button>
+                        <button class="delete" onclick="deleteContact(${index})">Delete</button>
+                    </div>
+                `;
+                contactList.appendChild(li);
+            });
+    });
+
+    addContactButton.addEventListener("click", addContact);
+    renderContacts();
+});
+
+</script>
