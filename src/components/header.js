@@ -8,10 +8,7 @@ function Header() {
     document.body.classList.toggle("stop-scrolling", !isMenuOpen);
   };
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-    document.body.classList.remove("stop-scrolling");
-  };
+
   return (
     <header id="header">
       <div className="overlay overlay-lg">
@@ -32,11 +29,7 @@ function Header() {
           className="letters"
           alt=""
         />
-        <img src="./img/shapes/x.png" className="shape xshape" alt="" />
-        <img src="./img/shapes/wave.png" className="shape wave wave1" alt="" />
-        <img src="./img/shapes/wave.png" className="shape wave wave2" alt="" />
-        <img src="./img/shapes/triangle.png" className="shape triangle" alt="" />
-        <img src="./img/shapes/points1.png" className="points points1" alt="" />
+
       </div>
       <nav>
         <div className="container">
@@ -55,11 +48,7 @@ function Header() {
                   Services
                 </a>
               </li>
-              <li>
-                <a href="#certification" onClick={closeMenu}>
-                  Certifications
-                </a>
-              </li>
+             
               <li>
                 <a href="#skills" onClick={closeMenu}>
                   Skills
@@ -107,12 +96,7 @@ function Header() {
             </a>
           </div>
           <div className="column-2 image">
-            <img
-              src="./img/shapes/points2.png"
-              className="points points2"
-              alt=""
-              fill="#191970"
-            />
+         
             <img src="./img/blog1.jpg" className="img-element z-index" alt="" />
           </div>
         </div>
