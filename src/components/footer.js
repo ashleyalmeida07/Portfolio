@@ -49,23 +49,7 @@ export default function Footer() {
           <span>Ashley Almeida</span>
         </p>
       </div>
-      <div className="followme-wrap">
-        <div className="followme">
-          <h3>Follow me</h3>
-          <span className="footer-line" />
-          <div className="social-media">
-            <a
-              href="https://x.com/_Almeida_Ashley"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fab fa-twitter" ></i>
-            </a>
-            <a
-              href="https://www.instagram.com/almeida_ashley_/profilecard/?igsh=NHl1Y2F0OHBhMXI="
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+  
               <i className="fab fa-instagram" ></i>
             </a>
             <a
