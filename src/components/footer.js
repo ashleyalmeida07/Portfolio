@@ -39,8 +39,8 @@ export default function Footer() {
 
       {/* <div className="grid-4-col footer-newstlette">
         <div className="footer-input-wrap">
-          <input className="footer-input" />
-          <a href="" className="input-arrow"></a>
+            <input type="tel" name="phone" required className="contact-input" placeholder="Phone" maxLength={10} pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" />
+          <a href="#" className="input-arrow"></a>
         </div>
       </div> */}
 
@@ -99,7 +99,7 @@ export default function Footer() {
         </div>
         {/* to move up  */}
         <div className="back-btn-wrap">
-          <a href="#" className="back-btn">
+          <a href="#top" className="back-btn" onClick={(e) => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }}>
           <i className="fa fa-chevron-up"></i>
           </a>
         </div>
