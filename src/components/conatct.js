@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 export default function Conatct() {
   const [result, setResult] = useState("");
@@ -69,7 +70,7 @@ export default function Conatct() {
             />
           </div>
           <div className="row">
-            <input type="text" name="phone" required className="contact-input" placeholder="Phone" />
+            <input type="tel" name="phone" required className="contact-input" placeholder="Phone" maxLength={10} pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" />
             <input type="email" name="email" required className="contact-input" placeholder="Email" />
           </div>
           <div className="row">
@@ -83,6 +84,12 @@ export default function Conatct() {
           </div>
 
           <div>
+            <div style={{ marginBottom: "1rem" }}>
+              <HCaptcha
+                sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                reCaptchaCompat={false}
+              />
+            </div>
             <input
               type="submit"
               value={result === "Sending...." ? "Sending..." : "Send"}
