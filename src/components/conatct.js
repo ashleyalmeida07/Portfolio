@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
 
 export default function Conatct() {
   const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending...");
+    setResult("Sending....");
     const formData = new FormData(event.target);
-
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", "54fa7a20-1f17-451b-8576-b799bbd0472c");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -16,13 +15,11 @@ export default function Conatct() {
     });
 
     const data = await response.json();
-
     if (data.success) {
       setResult("Message sent successfully!");
       event.target.reset();
     } else {
-      console.log("Error", data);
-      setResult(data.message);
+      setResult("Something went wrong. Please try again.");
     }
   };
 
@@ -40,13 +37,13 @@ export default function Conatct() {
           <div className="information-wrap">
             <div className="information">
               <div className="contact-icon">
-                <i className="fas fa-map-marker-alt" ></i>
+                <i className="fas fa-map-marker-alt"></i>
               </div>
               <p className="info-text">Mumbai, India</p>
             </div>
             <div className="information">
               <div className="contact-icon">
-                <i className="fas fa-paper-plane" ></i>
+                <i className="fas fa-paper-plane"></i>
               </div>
               <p className="info-text">ashleyalmeida182006@gmail.com</p>
             </div>
@@ -58,13 +55,15 @@ export default function Conatct() {
           <div className="row">
             <input
               type="text"
-              name="first_name" required
+              name="first_name"
+              required
               className="contact-input"
               placeholder="First Name"
             />
             <input
               type="text"
-              name="last_name" required
+              name="last_name"
+              required
               className="contact-input"
               placeholder="Last Name"
             />
@@ -78,37 +77,47 @@ export default function Conatct() {
               name="message"
               className="contact-input textarea"
               placeholder="Message"
+              required
               defaultValue={""}
             />
           </div>
 
-  <div>
-  <input 
-    type="submit" 
-    value="Send" 
-    style={{
-      all: 'unset',
-      display: 'inline-block',
-      padding: '0.85rem 2rem',
-      backgroundColor: 'var(--main-color)',
-      color: 'var(--light-one)',
-      borderRadius: '2rem',
-      fontSize: '1.05rem',
-      textTransform: 'uppercase',
-      fontWeight: 500,
-      transition: '0.3s',
-      cursor: 'pointer',
-      textAlign: 'center',
-    }}
-  />
-</div>
-{result && <p style={{ marginTop: '1rem', color: 'var(--main-color)', fontWeight: 500 }}>{result}</p>}
+          <div>
+            <input
+              type="submit"
+              value={result === "Sending...." ? "Sending..." : "Send"}
+              disabled={result === "Sending...."}
+              style={{
+                all: 'unset',
+                display: 'inline-block',
+                padding: '0.85rem 2rem',
+                backgroundColor: 'var(--main-color)',
+                color: 'var(--light-one)',
+                borderRadius: '2rem',
+                fontSize: '1.05rem',
+                textTransform: 'uppercase',
+                fontWeight: 500,
+                transition: '0.3s',
+                cursor: result === "Sending...." ? 'not-allowed' : 'pointer',
+                textAlign: 'center',
+                opacity: result === "Sending...." ? 0.7 : 1,
+              }}
+            />
+          </div>
 
+          {result && result !== "Sending...." && (
+            <p style={{
+              marginTop: '1rem',
+              fontWeight: 500,
+              color: result.includes("successfully") ? '#28a745' : '#dc3545'
+            }}>
+              {result}
+            </p>
+          )}
         </form>
-        
+
       </div>
     </div>
   </section>
-  
-  )
+  );
 }
