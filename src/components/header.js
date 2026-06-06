@@ -52,11 +52,7 @@ function Header() {
                   Home
                 </a>
               </li> */}
-              <li>
-                <a href="#education" onClick={closeMenu}>
-                  Education
-                </a>
-              </li>
+
               <li>
                 <a href="#certification" onClick={closeMenu}>
                   Certifications

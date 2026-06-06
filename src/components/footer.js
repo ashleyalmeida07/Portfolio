@@ -16,9 +16,7 @@ export default function Footer() {
       <div className="grid-4-col footer-links">
         <h3 className="title-sm">Links</h3>
         <ul>
-          <li>
-            <a href="#education">Education</a>
-          </li>
+
           <li>
             <a href="#certification">Certifications</a>
           </li>
