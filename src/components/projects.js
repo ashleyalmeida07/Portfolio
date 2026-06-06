@@ -23,9 +23,8 @@ export default function Projects() {
                 </div>
                 <h3 className="title-sm">KickStartCrypto – Web3 Crowdfunding Platform</h3>
                 <p className="blog-text">
-                  ● Built a decentralized Web3 crowdfunding platform on Ethereum (Sepolia) using Next.js 15, TypeScript, and Solidity, featuring milestone-based payouts and automated smart-contract refunds<br />
-                  ● Engineered a dual-authentication full-stack app integrating Wagmi/Viem for Web3 wallets and NextAuth for Google logins, backed by NeonDB (PostgreSQL) and Supabase<br />
-                  ● Created an automated email notification system and admin dashboard, tracking real-time on-chain events for users
+                  A decentralized crowdfunding platform on Ethereum (Sepolia) with milestone-based payouts, dual Web3/Google authentication, automated smart-contract refunds, and a real-time admin dashboard tracking on-chain events.<br />
+                  <b>Tools &amp; Techniques:</b> Next.js 15, TypeScript, Solidity, Wagmi/Viem, NeonDB, Supabase.
                 </p>
                 <a href="https://kickstart-crypto-nine.vercel.app/" className="btn small" target="_blank"
                   rel="noopener noreferrer">
@@ -45,9 +44,8 @@ export default function Projects() {
                 </div>
                 <h3 className="title-sm">AuthBlock — Blockchain-Based Academic Credential Verification</h3>
                 <p className="blog-text">
-                  ● Built a blockchain credential platform using Next.js, PostgreSQL, Solidity, and Ethereum (Sepolia) to issue tamper-proof degrees, marksheets, and course certificates across three on-chain smart contract registries<br />
-                  ● Implemented AWS S3 storage, QR-code passports, OCR-based verification, and SHA-256 hash anchoring on Ethereum for real-time credential authenticity checks<br />
-                  ● Delivered a full admin portal with bulk issuance, blockchain transaction tracking, QR-code Academic Passports, Firebase Storage, and a GitHub Actions CI/CD pipeline gating Vercel deployments
+                  A blockchain credential platform for issuing tamper-proof academic certificates across on-chain smart contract registries, with QR-code passports, OCR verification, SHA-256 hash anchoring, and a full admin portal with CI/CD deployment pipeline.<br />
+                  <b>Tools &amp; Techniques:</b> Next.js, PostgreSQL, Solidity, Ethereum, AWS S3, Firebase.
                 </p>
                 <a href="https://auth-block-iota.vercel.app/" className="btn small" target="_blank"
                   rel="noopener noreferrer">
@@ -61,16 +59,16 @@ export default function Projects() {
             <div className="blog-card">
               <div className="blog-content">
                 <div className="blog-image">
-                  <img src="./img/Screenshot 2025-04-25 172745.png" alt="" loading="lazy" />
+                  <img src="./img/p3.png" alt="" loading="lazy" />
                 </div>
                 <div className="blog-info">
                 </div>
-                <h3 className="title-sm">CampusInk</h3>
+                <h3 className="title-sm">CityLedger — Smart Civic Issue Tracking Platform</h3>
                 <p className="blog-text">
-                  Developed a Next.js frontend to showcase student achievements, including research papers, patents, and projects. Features include data submission, filtering by student, department, year, SDGs, searchable listings and a responsive interface to enhance visibility for faculty, recruiters, and research communities.<br />
-                  <b>Tools &amp; Techniques:</b> Next.js, Render.
+                  A full-stack civic complaint platform with role-based access for Citizens, Field Workers, and Officers. Features blockchain-anchored complaints on Ethereum Sepolia, AI-powered spam detection using NVIDIA NIM (Llama 3.3 70B), real-time WebSocket alerts, GPS-based task routing, and community upvote escalation.<br />
+                  <b>Tools &amp; Techniques:</b> Spring Boot, PostgreSQL, JWT, Web3j, Ethereum, NVIDIA NIM, WebSocket.
                 </p>
-                <a href="https://campusink.onrender.com/" className="btn small" target="_blank"
+                <a href="https://cityledger-qm0r.onrender.com/" className="btn small" target="_blank"
                   rel="noopener noreferrer">
                   View Demo
                 </a>

@@ -1,8 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Conatct() {
+  const [result, setResult] = useState("");
 
-  
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending...");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Message sent successfully!");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
     <section className="contact" id="contact">
     <div className="container">
@@ -19,7 +42,7 @@ export default function Conatct() {
               <div className="contact-icon">
                 <i className="fas fa-map-marker-alt" ></i>
               </div>
-              <p className="info-text">Mumabi, India</p>
+              <p className="info-text">Mumbai, India</p>
             </div>
             <div className="information">
               <div className="contact-icon">
@@ -27,69 +50,59 @@ export default function Conatct() {
               </div>
               <p className="info-text">ashleyalmeida182006@gmail.com</p>
             </div>
-            {/* <div className="information">
-              <div className="contact-icon">
-                <i className="fas fa-phone-alt" ></i>
-              </div>
-              <p className="info-text">+91 9579025326</p>
-            </div> */}
           </div>
         </div>
 
-        <form className="contact-form" action="https://formsubmit.co/b05d1e0d7fb0fd34a83b562d2a98aff2" method="POST">
+        <form className="contact-form" onSubmit={onSubmit}>
           <h3 className="title">Contact me</h3>
           <div className="row">
             <input
               type="text"
-              name="name" required
+              name="first_name" required
               className="contact-input"
               placeholder="First Name"
             />
             <input
               type="text"
-              name="name" required
+              name="last_name" required
               className="contact-input"
               placeholder="Last Name"
             />
           </div>
           <div className="row">
-            <input type="text" name="text" required className="contact-input" placeholder="Phone" />
+            <input type="text" name="phone" required className="contact-input" placeholder="Phone" />
             <input type="email" name="email" required className="contact-input" placeholder="Email" />
           </div>
           <div className="row">
             <textarea
-              name="msg"
+              name="message"
               className="contact-input textarea"
               placeholder="Message"
               defaultValue={""}
             />
           </div>
 
-          <input type="hidden" name="_captcha" value="false"/>
-          <input type="hidden" name="_template" value="table"/>
-
   <div>
   <input 
     type="submit" 
-    name="submit" 
     value="Send" 
     style={{
-      all: 'unset', // Reset default styles
-      display: 'inline-block', // Ensure block-level button layout
-      padding: '0.85rem 2rem', // Padding for size
-      backgroundColor: 'var(--main-color)', // Custom background color using CSS variable
-      color: 'var(--light-one)', // Text color using CSS variable
-      borderRadius: '2rem', // Rounded corners
-      fontSize: '1.05rem', // Font size
-      textTransform: 'uppercase', // Uppercase text
-      fontWeight: 500, // Font weight
-      transition: '0.3s', // Smooth transitions
-      cursor: 'pointer', // Pointer cursor for better UX
-      textAlign: 'center', // Center-align text
+      all: 'unset',
+      display: 'inline-block',
+      padding: '0.85rem 2rem',
+      backgroundColor: 'var(--main-color)',
+      color: 'var(--light-one)',
+      borderRadius: '2rem',
+      fontSize: '1.05rem',
+      textTransform: 'uppercase',
+      fontWeight: 500,
+      transition: '0.3s',
+      cursor: 'pointer',
+      textAlign: 'center',
     }}
   />
 </div>
-
+{result && <p style={{ marginTop: '1rem', color: 'var(--main-color)', fontWeight: 500 }}>{result}</p>}
 
         </form>
         
