@@ -1047,25 +1047,29 @@ header .circle {
 }
 
 .skills-section {
-  position: relative; /* Ensure the container is positioned relative */
+  position: relative;
   width: 45%;
-  background-color: var(--light-three);
-  padding: 15px;
-  margin: 10px 0;
-  transition: transform 0.3s; /* Add this line for smooth hover effect */
-
+  background-color: var(--light-one);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 15px 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 1;
 }
 
 .skills-section::before {
   content: attr(data-card);
   position: absolute;
-  top: -15px;
-  right: -15px;
+  top: -5px;
+  right: -5px;
   font-size: 6rem;
   font-weight: 800;
   line-height: 1;
   color: var(--main-color);
-
+  opacity: 0.05;
+  z-index: -1;
 }
 
 .skills-section::after {
@@ -1077,50 +1081,59 @@ header .circle {
   left: 0;
   background-color: var(--main-color);
   transition: 0.3s;
+  border-radius: 0 0 12px 12px;
 }
 
 .skills-section:hover {
-  transform: translateY(-15px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
 .skills-section:hover::after {
-  height: 8px;
+  height: 6px;
 }
 
 .skills-icon {
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
 }
 
 .skills-section h4 {
-  font-size: 18px;
-  color: var(--dark-one); 
-  margin-bottom: 10px;
+  font-size: 20px;
+  color: var(--main-color); 
+  margin-bottom: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  font-weight: 700;
 }
 
 .skills-section ul {
-  list-style:none;
+  list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .skills-section ul li {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--dark-one);
-  margin: 5px 0;
-  text-size-adjust: 50px;
-  margin-left: 20px;
-  font-weight:bold; /* Make the text bold */
+  background-color: var(--light-three);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 0;
+  transition: all 0.3s ease;
 }
 
 .skills-section ul li:hover{
-  color: var(--main-color);
-
+  background-color: var(--main-color);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .shape {

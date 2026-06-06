@@ -46,7 +46,7 @@ export default function Skills() {
                   />
                   Programming Languages
                 </h4>
-                <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 20px', justifyContent: 'center' }}>
+                <ul>
                   <li>C</li>
                   <li>C++</li>
                   <li>Java</li>
@@ -65,7 +65,7 @@ export default function Skills() {
                   />
                   Web Development
                 </h4>
-                <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 20px', justifyContent: 'center' }}>
+                <ul>
                   <li>HTML5</li>
                   <li>CSS3</li>
                   <li>React.js</li>
@@ -84,7 +84,7 @@ export default function Skills() {
                   />
                   Databases
                 </h4>
-                <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 20px', justifyContent: 'center' }}>
+                <ul>
                   <li>PostgreSQL</li>
                   <li>MySQL</li>
                 </ul>
@@ -99,7 +99,7 @@ export default function Skills() {
                   />
                   Tools and Platforms
                 </h4>
-                <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 20px', justifyContent: 'center' }}>
+                <ul>
                   <li>Git</li>
                   <li>GitHub</li>
                   <li>Docker</li>
@@ -117,7 +117,7 @@ export default function Skills() {
                   />
                   Core
                 </h4>
-                <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 20px', justifyContent: 'center' }}>
+                <ul>
                   <li>Data Structures &amp; Algorithms</li>
                   <li>OOP</li>
                   <li>REST APIs</li>
