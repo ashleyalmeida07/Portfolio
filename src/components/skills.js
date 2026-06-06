@@ -13,10 +13,38 @@ export default function Skills() {
       </p>
     </div>
     <div className="container-skills">
+      <img src="./img/shapes/points3.png" alt="" className="points points-sq"    loading="lazy"/>
+      <img
+        src="./img/Screenshot 2025-01-01 180244.png"
+        className="letter-skills"
+        alt=""
+          loading="lazy"
+
+      />
+      <img
+        src="./img/shapes/circle.png"
+        alt=""
+        className="shape shape-circle"
+          loading="lazy"
+
+      />
+      <img
+        src="./img/shapes/square.png"
+        alt=""
+        className="shape shape-square"
+          loading="lazy"
+
+      />
+      <img src="./img/shapes/wave.png" alt="" className="shape shape-wave"    loading="lazy"
+/>
       <div className="skills-container">
         <div className="skills-grid">
-
           <div className="skills-section">
+            <img
+              src="./img/Screenshot 2025-01-01 194153.png"
+              alt=""
+              className="skills-icon 1"
+            />
             <h4>Programming Languages</h4>
             <ul>
               <li>C</li>
@@ -27,9 +55,14 @@ export default function Skills() {
               <li>Solidity</li>
             </ul>
           </div>
-
           <div className="skills-section">
-            <h4>Web Development</h4>
+            <img
+              src="./img/Screenshot 2025-01-01 194153.png"
+              alt=""
+              className="skills-icon 2"
+              style={{ left: 167 }}
+            />
+            <h4> Web Development</h4>
             <ul>
               <li>HTML5</li>
               <li>CSS3</li>
@@ -40,7 +73,14 @@ export default function Skills() {
             </ul>
           </div>
 
+
           <div className="skills-section">
+            <img
+              src="./img/Screenshot 2025-01-01 194153.png"
+              alt=""
+              className="skills-icon 3"
+              style={{ left: 160 }}
+            />
             <h4>Databases</h4>
             <ul>
               <li>PostgreSQL</li>
@@ -48,7 +88,14 @@ export default function Skills() {
             </ul>
           </div>
 
+
           <div className="skills-section">
+            <img
+              src="./img/Screenshot 2025-01-01 194153.png"
+              alt=""
+              className="skills-icon 4"
+              style={{ left: 142 }}
+            />
             <h4>Tools and Platforms</h4>
             <ul>
               <li>Git</li>
@@ -60,13 +107,20 @@ export default function Skills() {
           </div>
 
           <div className="skills-section">
+            <img
+              src="./img/Screenshot 2025-01-01 194153.png"
+              alt=""
+              className="skills-icon 5"
+              style={{ left: 142 }}
+            />
             <h4>Core</h4>
             <ul>
-              <li>Data Structures &amp; Algorithms</li>
+              <li>Data Structures & Algorithms</li>
               <li>OOP</li>
               <li>REST APIs</li>
             </ul>
           </div>
+
 
         </div>
       </div>

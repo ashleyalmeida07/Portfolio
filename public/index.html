@@ -1028,37 +1028,44 @@ header .circle {
 
 /* skills */
 
-.container-skills {
+.container-skills{
   display: flex;
   justify-content: center;
 }
 
 .skills-container {
-  width: 95%;
-  padding: 10px;
+  width: 90%;
+  padding: 5px;
+  border-radius: 15px;
   margin: 0;
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .skills-section {
-  position: relative;
-  background-color: var(--light-one);
-  border-radius: 16px;
-  padding: 24px 22px;
-  margin: 0;
-  border-left: 4px solid var(--main-color);
-  box-shadow: 0 4px 20px rgba(25, 25, 112, 0.07);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
+  position: relative; /* Ensure the container is positioned relative */
+  width: 45%;
+  background-color: var(--light-three);
+  padding: 15px;
+  margin: 10px 0;
+  transition: transform 0.3s; /* Add this line for smooth hover effect */
+
 }
 
 .skills-section::before {
-  content: "";
+  content: attr(data-card);
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--main-color);
+
 }
 
 .skills-section::after {
@@ -1073,66 +1080,49 @@ header .circle {
 }
 
 .skills-section:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(25, 25, 112, 0.13);
+  transform: translateY(-15px);
 }
 
 .skills-section:hover::after {
-  height: 4px;
+  height: 8px;
 }
 
 .skills-icon {
-  display: none;
+  display: inline;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 28px;
+  left:132px;
+  transform: translate(-50%, -50%); /* Center the icon horizontally and vertically */
+  z-index: 1; /* Ensure the icon is above the heading */
 }
 
 .skills-section h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--main-color);
-  margin-bottom: 16px;
-  text-align: left;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.skills-section h4::before {
-  content: "";
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--main-color);
-  flex-shrink: 0;
+  font-size: 18px;
+color: var(--dark-one); 
+ margin-bottom: 10px;
+ text-align: center;
 }
 
 .skills-section ul {
-  list-style: none;
+  list-style:none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 
 .skills-section ul li {
-  font-size: 0.88rem;
+  font-size: 16px;
   color: var(--dark-one);
-  font-weight: 500;
-  background: var(--light-two);
-  padding: 5px 14px;
-  border-radius: 20px;
-  border: 1px solid rgba(25, 25, 112, 0.12);
-  margin: 0;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  margin: 5px 0;
+  text-size-adjust: 50px;
+  margin-left: 20px;
+  font-weight:bold; /* Make the text bold */
 }
 
-.skills-section ul li:hover {
-  background: var(--main-color);
-  color: var(--light-one);
-  transform: translateY(-2px);
+.skills-section ul li:hover{
+  color: var(--main-color);
+
 }
 
 .shape {
