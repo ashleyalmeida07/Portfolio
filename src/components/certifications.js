@@ -325,7 +325,40 @@ export default function Certifications() {
     </div>
   </div>
 
-  
+  <div className="grid-item others">
+    <div className="gallery-image">
+      <img src="./img/Certification/google_cloud-1.png" alt="" loading="lazy"/>
+      <div className="img-overlay">
+        <div className="img-description">
+          <h3>Google Cloud Career Launchpad</h3>
+          <h5>Cloud Engineer Track</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div className="grid-item others">
+    <div className="gallery-image">
+      <img src="./img/Certification/AWS_Academy_Graduate___Cloud_Architecting___Training_Badge_Badge20260510-31-tqe30t-1.png" alt="" loading="lazy"/>
+      <div className="img-overlay">
+        <div className="img-description">
+          <h3>AWS Academy Cloud Architecting</h3>
+          <h5>AWS Academy Graduate</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div className="grid-item appdev">
+    <div className="gallery-image">
+      <img src="./img/Certification/spit.png" alt="" loading="lazy"/>
+      <div className="img-overlay">
+        <div className="img-description">
+          <h3>SPIT Hackathon</h3>
+        </div>
+      </div>
+    </div>
+  </div>
 
           </div>
         </div>
