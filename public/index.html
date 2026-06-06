@@ -1088,21 +1088,19 @@ header .circle {
 }
 
 .skills-icon {
-  display: inline;
   width: 25px;
   height: 25px;
-  position: absolute;
-  top: 28px;
-  left:132px;
-  transform: translate(-50%, -50%); /* Center the icon horizontally and vertically */
-  z-index: 1; /* Ensure the icon is above the heading */
+  object-fit: contain;
 }
 
 .skills-section h4 {
   font-size: 18px;
-color: var(--dark-one); 
- margin-bottom: 10px;
- text-align: center;
+  color: var(--dark-one); 
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .skills-section ul {
