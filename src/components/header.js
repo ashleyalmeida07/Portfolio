@@ -101,7 +101,7 @@ function Header() {
               tech community.
             </p>
             <a
-              href="/img/Ashley_Almeida_Resume-1.pdf"
+              href="/img/public/Ashley_Almeida_Resume.pdf"
               className="btn"
                target="_blank"
   rel="noopener noreferrer"
