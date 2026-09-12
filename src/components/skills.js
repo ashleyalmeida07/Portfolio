@@ -51,6 +51,7 @@ export default function Skills() {
                   <li>C++</li>
                   <li>Java</li>
                   <li>JavaScript</li>
+                  <li>TypeScript</li>
                   <li>Python</li>
                   <li>Solidity</li>
                 </ul>
@@ -66,12 +67,12 @@ export default function Skills() {
                   Web Development
                 </h4>
                 <ul>
-                  <li>HTML5</li>
-                  <li>CSS3</li>
                   <li>React.js</li>
                   <li>Next.js</li>
+                  <li>Node.js</li>
                   <li>Flask</li>
                   <li>Spring Boot</li>
+                  <li>FastAPI</li>
                 </ul>
               </div>
 
@@ -87,6 +88,23 @@ export default function Skills() {
                 <ul>
                   <li>PostgreSQL</li>
                   <li>MySQL</li>
+                </ul>
+              </div>
+
+              <div className="skills-section">
+                <h4>
+                  <img
+                    src="./img/Screenshot 2025-01-01 194153.png"
+                    alt=""
+                    className="skills-icon 6"
+                  />
+                  AI Engineering
+                </h4>
+                <ul>
+                  <li>LangGraph</li>
+                  <li>ChromaDB</li>
+                  <li>n8n</li>
+                  <li>RAG</li>
                 </ul>
               </div>
 

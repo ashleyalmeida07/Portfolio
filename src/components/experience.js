@@ -2,6 +2,30 @@ const Experience = () => {
   const experiences = [
       {
         id: 1,
+        company: "CS Infocomm Private Limited",
+        position: "Software Engineer Intern",
+        duration: "Jul 2026 – Present",
+        location: "On-site",
+        description: [
+          "Developing a workflow automation platform using FastAPI, PostgreSQL, React, React Flow & LangGraph, with DAG-based workflow creation and execution",
+          "Building agentic workflow nodes with LangGraph & ChromaDB, integrating retrieval and FastAPI-based serving for multi-step automation"
+        ],
+        technologies: ["FastAPI", "PostgreSQL", "React", "React Flow", "LangGraph", "ChromaDB"]
+      },
+      {
+        id: 2,
+        company: "Virtue Crennovative Solutions",
+        position: "Full Stack Developer Intern",
+        duration: "Nov 2025 – Apr 2026",
+        location: "Remote",
+        description: [
+          "Developed end-to-end frontend and backend features for an e-commerce platform using Next.js, TypeScript & Node.js, owning features from implementation to delivery",
+          "Designed SQL queries and data workflows for listings, orders and reporting, improving operational efficiency and data accuracy"
+        ],
+        technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"]
+      },
+      {
+        id: 3,
         company: "TEDxCRCE",
         position: "Technical Lead",
         duration: "Jun 2025 – May 2026",
@@ -11,20 +35,7 @@ const Experience = () => {
           "Led cross-functional tech team to deliver scalable, real-world event infrastructure from development to live execution"
         ],
         technologies: ["React", "JavaScript", "Node.js", "CSS3"]
-      },
-      {
-    id: 2,
-    company: "Virtue Crennovative Solutions",
-    position: "Full Stack Developer Intern",
-    duration: "Nov 2025 – Apr 2026",
-    location: "Remote",
-    description: [
-      "Analyzed user behavior and platform data across multiple client projects, identifying performance gaps and driving improvements in system efficiency",
-      "Worked with structured databases (NeonDB, PostgreSQL, Firebase) writing queries to support data integrity and reporting across platforms"
-    ],
-    technologies: ["Next.js", "React", "Node.js", "PostgreSQL", "Firebase"]
-  }
-
+      }
   ];
 
   return (
